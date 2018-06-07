@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @player.name %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @player.number %>
+</p>
+
+<p>
+  <strong>Tall:</strong>
+  <%= @player.tall %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @player.weight %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @player.position %>
+</p>
+<p>
+  <strong>Image:</strong>
+
+  <%= @player.pictures.each do|f| %>
+  <%= image_tag f.picture_url %>
+  <% end %>
+</p>
+<%= link_to 'Edit', edit_player_path(@player) %> |
+<%= link_to 'Back', players_path %>

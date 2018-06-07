@@ -1,0 +1,48 @@
+<%= form_with(model: player, local: true) do |form| %>
+  <% if player.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(player.errors.count, "error") %> prohibited this player from being saved:</h2>
+
+      <ul>
+      <% player.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number %>
+    <%= form.number_field :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tall %>
+    <%= form.number_field :tall %>
+  </div>
+
+  <div class="field">
+    <%= form.label :weight %>
+    <%= form.number_field :weight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :position %><br>
+    <%= form.text_field :position %>
+  </div>
+  <div class="field">
+    <%= form.label :picture, "画像" %><br />
+    <%= form.fields_for :pictures do |f| %>
+      <%= f.label :picture, "画像ファイル" %>
+      <%= f.file_field :picture %>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
