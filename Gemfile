@@ -77,3 +77,6 @@ gem 'activeadmin'
 gem 'carrierwave'
 #画像リサイズ用のgem
 gem 'mini_magick' 
+#bootstrap
+gem 'bootstrap-sass'
+gem 'jquery-rails'

@@ -28,7 +28,8 @@
   <strong>Image:</strong>
 
   <%= @player.pictures.each do|f| %>
-  <%= image_tag f.picture_url %>
+  <%= p f %>
+  <img src="<%= f.picture_url %>" >
   <% end %>
 </p>
 <%= link_to 'Edit', edit_player_path(@player) %> |
