@@ -2,6 +2,7 @@ class PlayersController < InheritedResources::Base
   
   def index
     @players = Player.all
+    @pictures = Picture.all
   end
 
   def new

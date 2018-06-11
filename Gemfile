@@ -78,5 +78,7 @@ gem 'carrierwave'
 #画像リサイズ用のgem
 gem 'mini_magick' 
 #bootstrap
-gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
+#検索
+gem 'ransack'

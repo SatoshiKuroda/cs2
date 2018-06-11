@@ -27,10 +27,11 @@
 <p>
   <strong>Image:</strong>
 
-  <%= @player.pictures.each do|f| %>
-  <%= p f %>
-  <img src="<%= f.picture_url %>" >
-  <% end %>
 </p>
+  <% @player.pictures.each do|f| %>
+  <%= image_tag f.picture_url %>
+
+  <% end %>
+
 <%= link_to 'Edit', edit_player_path(@player) %> |
 <%= link_to 'Back', players_path %>

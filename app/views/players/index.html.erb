@@ -1,36 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Players</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Number</th>
-      <th>Tall</th>
-      <th>Weight</th>
-      <th>Position</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @players.each do |player| %>
-      <tr>
-        <td><%= player.name %></td>
-        <td><%= player.number %></td>
-        <td><%= player.tall %></td>
-        <td><%= player.weight %></td>
-        <td><%= player.position %></td>
-
-        <td><%= link_to 'Show', player %></td>
-        <td><%= link_to 'Edit', edit_player_path(player) %></td>
-        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
+<div class="d-flex justyfy-content-center" style=>
+<% @players.each do |player| %>
+  <div class="d-flex w-25 p-3 ">
+    <div class="w-25 p-3">
+      <div>名前</div>
+      <div>背番号</div>
+      <div>身長</div>
+      <div>体重</div>
+      <div>ポジション</div>
+    </div>
+    <div class="w-25 p-3">  
+      <div><%= player.name      %></div>
+      <div><%= player.number    %></div>
+      <div><%= player.tall      %></div>
+      <div><%= player.weight    %></div>
+      <div><%= player.position  %></div>
+    </div>
+    <div class="w-50 p-3">
+      <% player.pictures.each do|f| %>
+          <div><%= image_tag(f.picture_url, :class => "rounded") %></div>    
+      <% end %>
+    </div>
+  </div>
+<% end %>
+</div>
 <%= link_to 'New Player', new_player_path %>
