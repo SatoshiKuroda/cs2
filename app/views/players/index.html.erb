@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Players</h1>
-<div class="d-flex justyfy-content-center" style=>
+<div class="d-flex justyfy-content-center" style="flex-wrap: wrap;">
 <% @players.each do |player| %>
-  <div class="d-flex w-25 p-3 ">
-    <div class="w-25 p-3">
+  <div class="d-flex w-25 p-2 ">
+    <div class="w-25 p-1">
       <div>名前</div>
       <div>背番号</div>
       <div>身長</div>
       <div>体重</div>
       <div>ポジション</div>
     </div>
-    <div class="w-25 p-3">  
+    <div class="w-25 p-1">  
       <div><%= player.name      %></div>
       <div><%= player.number    %></div>
       <div><%= player.tall      %></div>
       <div><%= player.weight    %></div>
       <div><%= player.position  %></div>
     </div>
-    <div class="w-50 p-3">
+    <div class="w-50 p-1">
       <% player.pictures.each do|f| %>
           <div><%= image_tag(f.picture_url, :class => "rounded") %></div>    
       <% end %>

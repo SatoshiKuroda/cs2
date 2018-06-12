@@ -82,3 +82,38 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 #検索
 gem 'ransack'
+# JavaScript のエンジンである v8 を Ruby から使えるようにする
+gem 'therubyracer'
+# JavaScriptコードを実行するためのエンジン
+gem 'execjs'
+
+# Twitter社が提供しているCSSとJavaScriptのフレームワーク
+gem 'twitter-bootstrap-rails'
+# less(CSS)対応（後述LESSを使う場合）
+gem 'less-rails', git: 'https://github.com/MustafaZain/less-rails'
+
+group :development do
+  # エラー画面をわかりやすく整形してくれる
+  gem 'better_errors'
+
+  # better_errorsの画面上にirb/pry(PERL)を表示する
+  gem 'binding_of_caller'
+end
+
+group :development, :test do
+  gem 'hirb'         # モデルの出力結果を表形式で表示するGem
+  gem 'hirb-unicode' # 日本語などマルチバイト文字の出力時の出力結果のずれに対応
+
+  gem 'pry-rails'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
+  gem 'pry-doc'    # methodを表示
+  gem 'pry-byebug' # デバッグを実施
+end
+# フォームの見栄えを良くする
+gem 'simple_form'
+# 日時を操作するためのライブラリ
+gem 'momentjs-rails'
+# DateTimePicker
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+
+gem 'bcrypt'
+gem 'materialize-sass'
