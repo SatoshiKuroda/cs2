@@ -83,7 +83,7 @@ gem 'jquery-rails'
 #検索
 gem 'ransack'
 # JavaScript のエンジンである v8 を Ruby から使えるようにする
-gem 'therubyracer'
+gem 'therubyracer', "~> 0.12"
 # JavaScriptコードを実行するためのエンジン
 gem 'execjs'
 
@@ -114,6 +114,3 @@ gem 'simple_form'
 gem 'momentjs-rails'
 # DateTimePicker
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
-
-gem 'bcrypt'
-gem 'materialize-sass'
