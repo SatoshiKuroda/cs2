@@ -28,6 +28,10 @@ class PlayersController < InheritedResources::Base
     @player = Player.find(params[:id])
   end
 
+  def search
+    @player
+  end
+
   private
 
     def player_params

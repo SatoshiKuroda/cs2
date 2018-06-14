@@ -1,29 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Players</h1>
-<div class="d-flex justyfy-content-center" style="flex-wrap: wrap;">
+<div class="container">
+<div class="row">
 <% @players.each do |player| %>
-  <div class="d-flex w-25 p-2 ">
-    <div class="w-25 p-1">
+  <div class="col-sm-4 row">
+    <div class="col-sm-3">
       <div>名前</div>
       <div>背番号</div>
       <div>身長</div>
       <div>体重</div>
       <div>ポジション</div>
     </div>
-    <div class="w-25 p-1">  
+    <div class="col-sm-3">  
       <div><%= player.name      %></div>
       <div><%= player.number    %></div>
       <div><%= player.tall      %></div>
       <div><%= player.weight    %></div>
       <div><%= player.position  %></div>
     </div>
-    <div class="w-50 p-1">
+    <div class="col-sm-6">
       <% player.pictures.each do|f| %>
-          <div><%= image_tag(f.picture_url, :class => "rounded") %></div>    
+          <div><%= image_tag(f.picture_url, class: :"rounded") %></div>    
       <% end %>
     </div>
   </div>
 <% end %>
 </div>
-<%= link_to 'New Player', new_player_path %>
+<!--<%= button_to 'New Player', {controller: 'players', action:'new'},{method: :get, class: 'btn btn-primary'}%>-->
+<%= link_to 'New Player', new_player_path, class: 'btn btn-primary' %>
+<%= link_to fa_icon("home 4x", color: :"red"),'/' %>
+</div>

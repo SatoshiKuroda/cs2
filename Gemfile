@@ -89,8 +89,7 @@ gem 'execjs'
 
 # Twitter社が提供しているCSSとJavaScriptのフレームワーク
 gem 'twitter-bootstrap-rails'
-# less(CSS)対応（後述LESSを使う場合）
-gem 'less-rails', git: 'https://github.com/MustafaZain/less-rails'
+
 
 group :development do
   # エラー画面をわかりやすく整形してくれる
@@ -112,5 +111,5 @@ end
 gem 'simple_form'
 # 日時を操作するためのライブラリ
 gem 'momentjs-rails'
-# DateTimePicker
-gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+# fontawesome
+gem 'font-awesome-rails'
