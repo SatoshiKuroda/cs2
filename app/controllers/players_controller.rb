@@ -2,7 +2,9 @@ class PlayersController < InheritedResources::Base
   
   def index
     @players = Player.all
-    @pictures = Picture.all
+    @search = Player.ransack(params[:q])
+    @results  = @search.result(distinct: true)
+    @q = Player.search
   end
 
   def new
@@ -16,10 +18,10 @@ class PlayersController < InheritedResources::Base
     respond_to do |format|
       if @player.save
         format.html { redirect_to @player, notice: 'Player was successfully created.' }
-        format.json { render :show, status: :created, location: @player }
+        #format.json { render :show, status: :created, location: @player }
       else
         format.html { render :new }
-        format.json { render json: @player.errors, status: :unprocessable_entity }
+        #format.json { render json: @player.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -29,7 +31,8 @@ class PlayersController < InheritedResources::Base
   end
 
   def search
-    @player
+    @q = Player.search(search_params)
+    @players = @q.result.order(:created_at)
   end
 
   private
@@ -43,6 +46,10 @@ class PlayersController < InheritedResources::Base
         :position,
         pictures_attributes: [:picture]
         )
+    end
+
+    def search_params
+      params.require(:q).permit!
     end
 end
 

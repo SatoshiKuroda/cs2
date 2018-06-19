@@ -35,6 +35,13 @@
     </div>
 
     <div class="container">
+      <nav class="nav nav-pills nav-fill">
+        <%= link_to "Top" ,root_path , class: "nav-item nav-link active"%>
+        <%= link_to "選手一覧" ,players_path(params[:id]) , class: "nav-item nav-link active"%>
+        <%= link_to "選手登録・編集" ,root_path , class: "nav-item nav-link active"%>
+        <%= link_to "管理" ,root_path , class: "nav-item nav-link active"%>
+
+      </nav>
       <div class="row">
         <div class="col-lg-12">
           <%= bootstrap_flash %>

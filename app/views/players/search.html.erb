@@ -1,0 +1,39 @@
+
+<h3 class='page-header'>選手検索結果</h3>
+<div class='row'>
+  <div class='col-md-12'>
+    <div class='panel panel-inverse' data-sortable-id='table-basic-2'>
+      <div class='panel-body'>
+<%= search_form_for(@q, url: players_search_path, html: { method: :get, class: 'form-inline', role: 'form' }) do |f| %>
+  <%= render 'search_form', f: f %>
+<% end %>
+
+        <% @players.each do |player| %>
+          <div class="col-sm-4 row">
+            <div class="col-sm-3">
+              <div>名前</div>
+              <div>背番号</div>
+              <div>身長</div>
+              <div>体重</div>
+              <div>ポジション</div>
+            </div>
+            <div class="col-sm-3">  
+              <div><%= player.name      %></div>
+              <div><%= player.number    %></div>
+              <div><%= player.tall      %></div>
+              <div><%= player.weight    %></div>
+              <div><%= player.position  %></div>
+            </div>
+            <div class="col-sm-6">
+              <% player.pictures.each do|f| %>
+                  <div><%= image_tag(f.picture_url, class: :"rounded") %></div>    
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <%= link_to 'New Player', new_player_path, class: 'btn btn-primary' %>
+      <%= link_to fa_icon("home 2x", color: :"red"),'/' %>
+    </div>
+  </div>
+</div>

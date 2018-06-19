@@ -1,0 +1,17 @@
+<div class='panel panel-inverse'>
+  <div class='panel-body'>
+    <%= f.label :name,"名前", class: 'form-control' %>
+    <%= f.text_field :name_cont, placeholder: '選手名', class: 'form-control' %>
+    <%= f.label :player_id,"背番号", class: 'form-control' %>
+    <%= f.collection_select :id, Player.all, :id, :number, :include_blank => true, class: 'form-control' %>
+    <%= f.label :tall,"身長", class: 'form-control' %>
+    <%= f.number_field :tall_gteq, class: "form-control"%>cm以上 〜
+    <%= f.number_field :tall_lteq, class: "form-control" %>cm以下
+        <%= f.label :weight,"体重", class: 'form-control' %>
+    <%= f.number_field :weight_gteq, class: "form-control"%>kg以上 〜
+    <%= f.number_field :weight_lteq, class: "form-control" %>kg以下
+    <%= f.label :position,"ポジション", class: 'form-control' %>
+    <%= f.collection_select :position, Player.all, :position, :position, :include_blank => true, class: 'form-control' %>
+    <%= submit_tag '検索', class: 'form-control btn btn-info w40 mr10' %>
+    </div>
+</div>
