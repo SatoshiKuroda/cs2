@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
+  
   ActiveAdmin.routes(self)
+ 
   devise_for :users
   get  'home/index'
   get  'home/show'
-  root 'home#index'
+
   get  'users/index'
   get  'players/search',to: 'players#search'
 
-
+  devise_scope :user do
+    root :to => "devise/sessions#new"
+  end
 
 
   resources :players

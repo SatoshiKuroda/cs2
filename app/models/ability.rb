@@ -28,5 +28,16 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+
+cannot :manage, :all
+
+    user ||= User.new
+    if user.admin?
+      can :manage, :all
+    else
+      can :read, :all
+      cannot :manage, ActiveAdmin::Page # roleがadmin以外であればactiveadminの各種ページにアクセス出来ないようにした
+    end
+
   end
 end

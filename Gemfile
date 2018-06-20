@@ -113,3 +113,5 @@ gem 'simple_form'
 gem 'momentjs-rails'
 # fontawesome
 gem 'font-awesome-rails'
+# activeadmin見た目
+gem 'active_admin_flat_skin'
