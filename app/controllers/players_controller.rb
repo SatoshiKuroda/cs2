@@ -44,7 +44,7 @@ class PlayersController < InheritedResources::Base
         :tall,
         :weight,
         :position,
-        pictures_attributes: [:picture]
+        pictures_attributes: [:id, :image, :player_id, :picture]
         )
     end
 

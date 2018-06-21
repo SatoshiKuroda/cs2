@@ -12,4 +12,6 @@ ActiveAdmin.register Picture do
 #   permitted
 # end
 
+permit_params :image, :image_cache, :player_id, :picture
+
 end
